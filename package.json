@@ -1,22 +1,21 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^18.0.6",
-    "airtable": "^0.11.6",
-    "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3",
-    "mongodb": "^5.1.0",
-    "node-fetch": "^3.2.6",
-    "openai": "^3.1.0",
-    "sentiment": "^5.0.2"
-  }
+    "type": "module",
+    "dependencies": {
+        "@pinecone-database/pinecone": "^0.0.14",
+        "discord.js": "^14.9.0",
+        "dotenv": "^16.0.3",
+        "node-fetch": "^3.3.1",
+        "openai": "^3.2.1"
+    },
+    "name": "bots",
+    "version": "1.0.0",
+    "main": "discord-bot.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node discord-bot.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }
