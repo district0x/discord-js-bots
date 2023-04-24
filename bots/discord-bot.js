@@ -5,7 +5,6 @@ import fetch from 'node-fetch';
 import { config as dotenvConfig } from 'dotenv';
 import * as openai from 'openai';
 
-
 dotenvConfig();
 
 const pinecone = new PineconeClient();
@@ -15,7 +14,7 @@ await pinecone.init({
 });
 console.log(pinecone); // Add this line to check if pinecone is initialized properly
 
-
+openai.apiKey = 'process.env.OPENAI_API_KEY;'
 
 const client = new Client({ 
   intents: [
@@ -44,6 +43,23 @@ client.on('messageCreate', async (message) => {
       message.channel.send(answer);
     } catch (error) {
       console.error('Error querying Pinecone:', error);
+      message.channel.send('Sorry, there was an error processing your request.');
+    }
+  } else {
+    try {
+      const prompt = `User: ${message.content}\nChatbot:`;
+      const response = await openai.completions.create({
+        engine: 'davinci',
+        prompt,
+        maxTokens: 150,
+        n: 1,
+        stop: ['User:'],
+      });
+
+      const messageToSend = response.data.choices[0].text.trim();
+      message.channel.send(messageToSend);
+    } catch (error) {
+      console.error('Error generating ChatGPT response:', error);
       message.channel.send('Sorry, there was an error processing your request.');
     }
   }
