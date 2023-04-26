@@ -18,7 +18,7 @@ console.log(pinecone); // Add this line to check if pinecone is initialized prop
 console.log(process.env.OPENAI_API_KEY) 
 openai.apiKey = process.env.OPENAI_API_KEY;
 
-const indexName ='ethlancegpt';
+const indexName ='ethlance-gpt';
 let pineconeIndex;
 
 pinecone.listIndexes().then((indexes) => {
@@ -105,5 +105,4 @@ client.on('messageCreate', async (message) => {
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
-
 
