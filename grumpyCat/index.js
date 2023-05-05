@@ -22,7 +22,7 @@ const client = new Client({
     GatewayIntentBits.MessageContent
   ]
 });
-
+ 
 //👆 This is a comment. Comments are used to add notes to your code that are not executed as part of the program. 📝📚
 
 // Initialize a new Discord bot that can connect to Discord servers and receive information about the user's guilds, messages, and message content 🤖🛡️🏰💬📝. 
