@@ -1,0 +1,19 @@
+{
+  "name": "grumpy_cat",
+  "version": "1.0.0",
+  "description": "Grumpy Cat discord bot for streamtide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^0.0.14",
+    "discord.js": "^14.10.2",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "pinecone": "^0.1.0"
+  }
+}
