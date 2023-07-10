@@ -13,21 +13,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-// Load dependencies
-const dotenv = require("dotenv");
-const PineconeClient = require("@pinecone-database/pinecone").PineconeClient;
-const { Configuration, OpenAIApi } = require("openai");
-
-// Load environment variables
-dotenv.config();
-
-// Create Pinecone and OpenAI instances
-const pinecone = new PineconeClient();
-const configuration = new Configuration({
-	apiKey: process.env.OPENAI_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
 // Initialize Pinecone index
 let index;
 const pineconeIndexName = process.env.PINECONE_INDEX_NAME;
@@ -188,4 +173,5 @@ module.exports = {
 	queryIndexAndGenerateResponse,
 	searchIndex
 };
+
 
