@@ -13,7 +13,7 @@
     "@pinecone-database/pinecone": "^0.0.14",
     "discord.js": "^14.10.2",
     "dotenv": "^16.0.3",
-    "openai": "^3.2.1",
+    "openai": "^4.17.4",
     "pinecone": "^0.1.0"
   }
 }
